@@ -1,7 +1,8 @@
 import { Main } from "./style";
 import imgBook from "../../assets/livro.png";
 import { Stack, Rating } from "@mui/material";
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import api from "../../Service/api";
 
 const AssesmentMain = () => {
   const StarIcon = (props: any) => {
@@ -48,16 +49,26 @@ const AssesmentMain = () => {
     );
   };
 
-  const [value, SetValue] = useState<number | null>(null);
-  
-  const handleChange = (event: React.ChangeEvent<{}>, newValue: number | null) => {
-    SetValue(newValue)
+  const [value, setValue] = useState<number | null >(null);
 
+  const handleChange = (
+    event: React.ChangeEvent<{}>,
+    newValue: number | null
+  ) => {
+    setValue(newValue);
+    console.log(newValue);
+  };
 
-
-    console.log(newValue)
-  }
-  
+  const handleClick = () => {
+    api
+      .post("/add", {
+        "stars": value
+      })
+      .then((response) => console.log(response.data))
+      .catch((err) => {
+        console.error("ops! ocorreu um erro" + err);
+      });
+  };
 
   return (
     <Main>
@@ -70,7 +81,7 @@ const AssesmentMain = () => {
       <div className="divStar">
         <Stack>
           <Rating
-            value={value} 
+            value={value}
             onChange={handleChange}
             className="stars"
             icon={<ColoredStarIcon />}
@@ -81,7 +92,12 @@ const AssesmentMain = () => {
 
       <div className="divButtons">
         <button className="skipBtn">PULAR</button>
-        <button className={`${value ? 'confirmBtn1' : 'confirmBtn2'}`}>CONFIRMAR</button>
+        <button
+          className={`${value ? "confirmBtn1" : "confirmBtn2"}`}
+          onClick={handleClick}
+        >
+          CONFIRMAR
+        </button>
       </div>
     </Main>
   );
