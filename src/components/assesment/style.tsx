@@ -16,7 +16,7 @@ export const Main = styled.main`
   h1 {
     max-width: 220px;
     margin-top: 20px;
-    font-family: "Londrina Solid", cursive;
+    font-family: var(--font-assesment);
     font-weight: 400;
     font-size: 2.125rem;
     text-align: center;
@@ -49,39 +49,38 @@ export const Main = styled.main`
     cursor: pointer;
     background-color: transparent;
     border: none;
-    font-family: "Work Sans", sans-serif;
-    color: #2cc6d0;
+    font-family: var(--font);
+    color: var(--blue-acqua);
     font-weight: 600;
     font-size: 1rem;
   }
 
   .confirmBtn1 {
     cursor: pointer;
-    font-family: "Work Sans", sans-serif;
-    background-color: #2CC6D0;
+    font-family: var(--font);
+    background-color: var(--blue-acqua);
     transition: 1s;
-    color: white;
+    color: var(--white);
     font-weight: 600;
     font-size: 1rem;
     text-shadow: 0px 1px 1px rgba(0, 0, 0, 0.1);
-    box-shadow: -4px 12px 25px -10px #00000080;
+    box-shadow: -4px 12px 25px -10px var(--dark-blue);
     border-radius: 100px;
     border: none;
     width: 140px;
     height: 40px;
   }
-  
-  
+
   .confirmBtn2 {
     cursor: pointer;
-    font-family: "Work Sans", sans-serif;
-    background-color: #c8c8c8;
+    font-family: var(--font);
+    background-color: var(--gray-assessment);
     transition: 1s;
-    color: white;
+    color: var(--white);
     font-weight: 600;
     font-size: 1rem;
     text-shadow: 0px 1px 1px rgba(0, 0, 0, 0.1);
-    box-shadow: -4px 12px 25px -10px #00000080;
+    box-shadow: -4px 12px 25px -10px var(--dark-blue);
     border-radius: 100px;
     border: none;
     width: 140px;

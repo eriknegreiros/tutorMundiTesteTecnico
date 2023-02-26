@@ -1,9 +1,7 @@
-import AssesmentMain from "../../components/assesment"
+import AssesmentMain from "../../components/assesment";
 
 const Assesment = () => {
-return(
-    <AssesmentMain/>
-)
-}
+  return <AssesmentMain />;
+};
 
-export default Assesment
+export default Assesment;

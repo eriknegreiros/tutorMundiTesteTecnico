@@ -1,7 +1,7 @@
 import { Main } from "./style";
 import imgBook from "../../assets/livro.png";
 import { Stack, Rating } from "@mui/material";
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import api from "../../Service/api";
 
 const AssesmentMain = () => {
@@ -49,7 +49,7 @@ const AssesmentMain = () => {
     );
   };
 
-  const [value, setValue] = useState<number | null >(null);
+  const [value, setValue] = useState<number | null>(null);
 
   const handleChange = (
     event: React.ChangeEvent<{}>,
@@ -62,7 +62,7 @@ const AssesmentMain = () => {
   const handleClick = () => {
     api
       .post("/add", {
-        "stars": value
+        stars: value,
       })
       .then((response) => console.log(response.data))
       .catch((err) => {
